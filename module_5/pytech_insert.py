@@ -6,18 +6,21 @@ students = db["students"]
 students.delete_many({})
 fred = {
     "first_name": "Fred",
+    "last_name": "Fisk",
     "student_id":"1007"
 }
 students.insert_one(fred)
 
 brad = {
     "first_name": "Brad",
+    "last_name": "Darby",
     "student_id":"1008"
 }
 students.insert_one(brad)
 
 frank = {
     "first_name": "Frank",
+    "last_name": "Sink",
     "student_id":"1009"
 }
 students.insert_one(frank)
