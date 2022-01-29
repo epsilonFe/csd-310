@@ -4,6 +4,7 @@ client = MongoClient("mongodb+srv://admin:admin@cluster0.i5ype.mongodb.net/pytec
 db = client["pytech"]
 students = db["students"]
 students.delete_many({})
+
 fred = {
     "first_name": "Fred",
     "last_name": "Fisk",
@@ -25,6 +26,13 @@ frank = {
 }
 students.insert_one(frank)
 
-docs = db.students.find({})
-for doc in docs:
-    print(doc)
+student_list = students.find({})
+print("\n -- DISPLAYING STUDENTS DOCUMENTS FROM find() QUERY --")
+for doc in student_list:
+    print("Student ID: " + doc["student_id"] + "\nFirst Name: " + doc["first_name"] + "\nLast Name: " + doc["last_name"]+"\n")
+result = students.update_one({"student_id": "1007"}, {"$set": {"last_name": "Burbank"}})
+
+result = students.find_one({"student_id": "1007"})
+
+print("\n  -- DISPLAYING STUDENT DOCUMENT 1007 --")
+print("Student ID: " + result["student_id"] + "\nFirst Name: " + result["first_name"] + "\nLast Name: " + result["last_name"]+"\n")
