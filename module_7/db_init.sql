@@ -1,25 +1,15 @@
-/*
-    Title: db_init.sql
-    Author: Professor Krasso
-    Date: 15 July 2020
-    Description: pysports database initialization script.
-*/
-
 -- drop test user if exists 
-DROP USER IF EXISTS 'pysports_user'@'localhost';
-
+DROP USER IF EXISTS 'pysports_javier'@'localhost';
 
 -- create pysports_user and grant them all privileges to the pysports database 
-CREATE USER 'pysports_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'MySQL8IsGreat!';
+CREATE USER 'pysports_javier'@'localhost' IDENTIFIED WITH mysql_native_password BY 'ZKuEL-3gatque';
 
 -- grant all privileges to the pysports database to user pysports_user on localhost 
-GRANT ALL PRIVILEGES ON pysports.* TO'pysports_user'@'localhost';
-
+GRANT ALL PRIVILEGES ON pysports.* TO'pysports_javier'@'localhost';
 
 -- drop tables if they are present
 DROP TABLE IF EXISTS player;
 DROP TABLE IF EXISTS team;
-
 
 -- create the team table 
 CREATE TABLE team (
@@ -68,3 +58,4 @@ INSERT INTO player(first_name, last_name, team_id)
 
 INSERT INTO player(first_name, last_name, team_id)
     VALUES('Azog', 'The Defiler', (SELECT team_id FROM team WHERE team_name = 'Team Sauron'));
+    
