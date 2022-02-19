@@ -19,7 +19,7 @@ CREATE TABLE book (
     book_id     INT             NOT NULL    AUTO_INCREMENT,
     book_name   VARCHAR(200)    NOT NULL,
     author      VARCHAR(200)    NOT NULL,
-    book_year   VARCHAR(4),
+    book_year   VARCHAR(4)		NOT NULL,
     PRIMARY KEY(book_id)
 );
 
