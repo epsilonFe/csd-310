@@ -45,6 +45,8 @@ CREATE TABLE wishlist (
 
 INSERT INTO store(locale)
     VALUES('5400 Queso Court, Zephyrhills, FL 33540');
+INSERT INTO store(locale)
+    VALUES('5450 Queso Court, Zephyrhills, FL 33540');
 
 INSERT INTO book(book_name, author, book_year)
     VALUES('Smart policies for workplace technologies', 'Lisa Guerin', '1964');
